@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+    <!-- Google fonts. -->
+    <link href='https://fonts.googleapis.com/css?family=Bungee Outline' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'/>
+    <!-- Use font awesome icons. -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Use firebase app and database. -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <!-- The CSS and JS file must be declared after the things above-->
+    <link rel="stylesheet" href="style.css"/>
+    <!-- <script type="text/javascript" src="index.js"></script> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIT Solapur</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+</head>
+
+<body>
+  <section class="sub-header">
+    <nav>
+        <a href="index.html">
+            <img class="logoo" src="witlogo.png" style="filter: invert(25%) sepia(97%) saturate(1381%) hue-rotate(197deg) brightness(88%) contrast(84%);"></a>
+        <!-- menu -->
+        <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+        <label for="menu-icon"></label>
+        <nav class="nav"> 		
+            <ul class="pt-5">
+                <li><a href="index.html">HOME</a></li>
+                <li><a class="hide-on-hover" href="events.html">EVENTS</a>
+                <ul>
+                    <li>
+                        <a href="stroke.html">STROKE</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">GALLERY</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="chat.html">CHAT</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </nav>
+        <!-- menu -->
+    </nav>
+    <h1>WIT-CHATROOM</h1>
+</section>
+
+  <!-- <div id="title_container">
+    <div id="title_inner_container">
+      <h1 id="title">WIT-CHAT</h1>
+    </div>
+  </div> -->
+  <div id="join_container">
+    <div id="join_inner_container">
+      <div id="join_input_container">
+        <input id="join_input" maxlength="15" placeholder="Nickname">
+      </div>
+      <div id="join_button_container">
+        <button id="join_button">Join <i class="fas fa-sign-in-alt"></i></button>
+      </div>
+    </div>
+  </div>
+  <div id="chat_container" style="display: none;">
+    <div id="chat_inner_container">
+      <div id="chat_content_container"></div>
+      <div id="chat_input_container">
+        <input id="chat_input" maxlength="1000" placeholder="">
+        <button id="chat_input_send" disabled><i class="far fa-paper-plane"></i></button>
+      </div>
+      <!-- <div id="chat_logout_container">
+        <button id="chat_logout">• Logout</button>  
+      </div> -->
+    </div>
+  </div>
+
+  <!-- footer -->
+<section class="footer">
+  <h4>About Us</h4>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aut dolorem ipsam voluptas nobis deleniti accusantium incidunt laudantium in pariatur perferendis magnam <br> quas, quisquam sapiente, reprehenderit, autem adipisci ex itaque?</p>
+  <div class="icons">
+      <i class="fa fa-facebook"></i>
+      <i class="fa fa-twitter"></i>
+      <i class="fa fa-instagram"></i>
+      <i class="fa fa-linkedin"></i>
+  </div>
+  <p>Made with <i class="fa fa-heart-o"></i> by <span>TEAM OPTIONS</span></p>
+</section>
+
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCPMEzuKlFe3soZ5aVTBU0_40dBTCf4lyU",
+      authDomain: "web-chat-1aca5.firebaseapp.com",
+      databaseURL: "https://web-chat-1aca5-default-rtdb.firebaseio.com",
+      projectId: "web-chat-1aca5",
+      storageBucket: "web-chat-1aca5.appspot.com",
+      messagingSenderId: "990789944196",
+      appId: "1:990789944196:web:473abba499ffbfe38d13d1"
+    };
+  //   const firebaseConfig = {
+  //   apiKey: "AIzaSyD6LpGvM1Nipa5ZXLy0NkZYZ93ZweJJAsU",
+  //   authDomain: "witchat-f26a1.firebaseapp.com",
+  //   databaseURL: "https://witchat-f26a1-default-rtdb.firebaseio.com/",
+  //   projectId: "witchat-f26a1",
+  //   storageBucket: "witchat-f26a1.appspot.com",
+  //   messagingSenderId: "1040809984128",
+  //   appId: "1:1040809984128:web:b840557749f33464eae665"
+  // };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.database();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var joinContainer = document.getElementById("join_container");
+      var chatContainer = document.getElementById("chat_container");
+      var joinInput = document.getElementById("join_input");
+      var joinButton = document.getElementById("join_button");
+      var chatContentContainer = document.getElementById("chat_content_container");
+      var chatInput = document.getElementById("chat_input");
+      var chatInputSend = document.getElementById("chat_input_send");
+      // var chatLogout = document.getElementById("chat_logout");
+
+      joinButton.addEventListener("click", function () {
+        var name = joinInput.value.trim();
+        if (name !== "") {
+          localStorage.setItem("name", name);
+          joinContainer.style.display = "none";
+          chatContainer.style.display = "block";
+          chatInput.focus();
+        }
+      });
+
+      chatInput.addEventListener("input", function () {
+        chatInputSend.disabled = chatInput.value.trim() === "";
+      });
+
+      chatInputSend.addEventListener("click", function () {
+        var message = chatInput.value.trim();
+        if (message !== "") {
+          chatInputSend.disabled = true;
+          sendMessage(message);
+          chatInput.value = "";
+          chatInput.focus();
+        }
+      });
+
+      // chatLogout.addEventListener("click", function () {
+      //   localStorage.removeItem("name");
+      //   chatContainer.style.display = "none";
+      //   joinContainer.style.display = "block";
+      //   joinInput.value = "";
+      //   joinInput.focus();
+      //   clearChatContent();
+      // });
+
+      function sendMessage(message) {
+        var name = localStorage.getItem("name");
+        var timestamp = new Date().getTime();
+        db.ref("messages/" + timestamp).set({
+          name: name,
+          message: message
+        });
+      }
+
+      function clearChatContent() {
+        while (chatContentContainer.firstChild) {
+          chatContentContainer.firstChild.remove();
+        }
+      }
+
+      db.ref("messages").on("child_added", function (snapshot) {
+        var messageData = snapshot.val();
+        var messageElement = document.createElement("div");
+        messageElement.innerHTML = "<strong>" + messageData.name + ":</strong> " + messageData.message;
+        chatContentContainer.appendChild(messageElement);
+      });
+
+      var container = document.getElementById("chat_content_container");
+
+// Scroll to the bottom of the container when new content is added
+container.addEventListener("DOMNodeInserted", function(event) {
+  container.scrollTop = container.scrollHeight;
+});
+
+function scrollToBottom(containerId) {
+  var container = document.getElementById(containerId);
+  container.scrollTop = container.scrollHeight;
+}
+
+// Event listener for container open or show
+var containerElement = document.getElementById('chat_content_container');
+containerElement.addEventListener('show', function() {
+  scrollToBottom('chat_content_container');
+});
+
+
+    });
+  </script>
+</body>
+
+</html>

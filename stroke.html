@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIT Solapur</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+<section class="sub-header">
+    <nav>
+        <a href="index.html">
+            <img class="logoo" src="witlogo.png" style="filter: invert(25%) sepia(97%) saturate(1381%) hue-rotate(197deg) brightness(88%) contrast(84%);"></a>
+        <!-- menu -->
+        <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+        <label for="menu-icon"></label>
+        <nav class="nav"> 		
+            <ul class="pt-5">
+                <li><a href="index.html">HOME</a></li>
+                <li><a class="hide-on-hover" href="events.html">EVENTS</a>
+                <ul>
+                    <li>
+                        <a href="stroke.html">STROKE</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">GALLERY</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="chat.html">CHAT</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </nav>
+        <!-- menu -->
+    </nav>
+    <h1>STROKE 2K23</h1>
+</section>
+<section class="stroke">
+    <div class="slider-wrapper">
+        <div class="slider">
+            <img id="slide-1" src="stroke-img1.jpeg" />
+            <img id="slide-2" src="stroke-img2.jpg" />
+            <img id="slide-3" src="stroke-img3.jpg" />
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+        </div>
+    </div>
+</section>
+<script>
+    let slider = document.querySelector('.slider');
+let scrollAmount = 0;
+let scrollInterval;
+
+function startAutoScroll() {
+  scrollInterval = setInterval(() => {
+    scrollAmount += 300;
+    if (scrollAmount > slider.scrollWidth - slider.clientWidth) {
+      scrollAmount = 0;
+    }
+    slider.scrollTo({
+      top: 0,
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }, 700);
+}
+startAutoScroll();
+</script>
+<div class="row-stroke">
+    <div class="course-col-stroke">
+        <h3>FOOTBALL</h3>
+        <img src="stroke-img1.jpeg">
+        <p>This department was established in 1985. Since then, the department has been running the UG course of CSE. The department started a PG course in Computer Science & Engineering in 2009-10. Research laboratory under the department is recognized for Doctoral Research. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate officia et delectus harum, unde facilis enim, repellendus assumenda, alias minima sed! Vitae, aspernatur. Aut iusto eos ut ducimus nisi non.
+        Expedita quidem a quasi non aliquid repellendus unde corrupti, minus aut aperiam inventore modi eius. Hic quam, sit accusantium aperiam expedita, obcaecati asperiores nihil totam in deleniti officiis perspiciatis ipsum?
+        </p>
+    </div>
+    <div class="col-stroke">
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Ritesh Birajdar</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Amit Khatke</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Chetan Birajdar</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-stroke">
+    <div class="col-stroke">
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Ritesh Birajdar</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Amit Khatke</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Chetan Birajdar</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+    </div>
+    <div class="course-col-stroke">
+        <h3>CRICKET</h3>
+        <img src="stroke-img1.jpeg">
+        <p>This department was established in 1985. Since then, the department has been running the UG course of CSE. The department started a PG course in Computer Science & Engineering in 2009-10. Research laboratory under the department is recognized for Doctoral Research. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolorem molestias placeat aliquam assumenda dolorum a consectetur molestiae eius, ea impedit repellendus delectus labore similique, maiores, est illum fuga harum!
+        In beatae nulla iste sunt illum eligendi laborum fugit quasi consequatur magni quae quos incidunt ipsum mollitia repellat nostrum magnam sint deserunt ipsa odio, ut optio! Nisi in ut expedita.
+        Enim saepe deserunt, perferendis in aperiam error amet autem provident quis officia accusantium tempore tempora velit quasi quidem maxime odit quisquam, quod reprehenderit voluptatum architecto rem possimus voluptates tenetur? Deserunt?
+        </p>
+    </div>
+</div>
+<div class="row-stroke">
+    <div class="course-col-stroke">
+        <h3>BASKETBALL</h3>
+        <img src="stroke-img1.jpeg">
+        <p>This department was established in 1985. Since then, the department has been running the UG course of CSE. The department started a PG course in Computer Science & Engineering in 2009-10. Research laboratory under the department is recognized for Doctoral Research. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolorem molestias placeat aliquam assumenda dolorum a consectetur molestiae eius, ea impedit repellendus delectus labore similique, maiores, est illum fuga harum!
+        In beatae nulla iste sunt illum eligendi laborum fugit quasi consequatur magni quae quos incidunt ipsum mollitia repellat nostrum magnam sint deserunt ipsa odio, ut optio! Nisi in ut expedita.
+        Enim saepe deserunt, perferendis in aperiam error amet autem provident quis officia accusantium tempore tempora velit quasi quidem maxime odit quisquam, quod reprehenderit voluptatum architecto rem possimus voluptates tenetur? Deserunt?
+        </p>
+    </div>
+    <div class="col-stroke">
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Ritesh Birajdar</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Amit Khatke</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Chetan Birajdar</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-stroke">
+    <div class="col-stroke">
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Ritesh Birajdar</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Amit Khatke</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Chetan Birajdar</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+    </div>
+    <div class="course-col-stroke">
+        <h3>VOLLEYBALL</h3>
+        <img src="stroke-img1.jpeg">
+        <p>This department was established in 1985. Since then, the department has been running the UG course of CSE. The department started a PG course in Computer Science & Engineering in 2009-10. Research laboratory under the department is recognized for Doctoral Research. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolorem molestias placeat aliquam assumenda dolorum a consectetur molestiae eius, ea impedit repellendus delectus labore similique, maiores, est illum fuga harum!
+        In beatae nulla iste sunt illum eligendi laborum fugit quasi consequatur magni quae quos incidunt ipsum mollitia repellat nostrum magnam sint deserunt ipsa odio, ut optio! Nisi in ut expedita.
+        Enim saepe deserunt, perferendis in aperiam error amet autem provident quis officia accusantium tempore tempora velit quasi quidem maxime odit quisquam, quod reprehenderit voluptatum architecto rem possimus voluptates tenetur? Deserunt?
+        </p>
+    </div>
+</div>
+<div class="row-stroke">
+    <div class="course-col-stroke">
+        <h3>TABLE TENNIS</h3>
+        <img src="stroke-img1.jpeg">
+        <p>This department was established in 1985. Since then, the department has been running the UG course of CSE. The department started a PG course in Computer Science & Engineering in 2009-10. Research laboratory under the department is recognized for Doctoral Research. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolorem molestias placeat aliquam assumenda dolorum a consectetur molestiae eius, ea impedit repellendus delectus labore similique, maiores, est illum fuga harum!
+        In beatae nulla iste sunt illum eligendi laborum fugit quasi consequatur magni quae quos incidunt ipsum mollitia repellat nostrum magnam sint deserunt ipsa odio, ut optio! Nisi in ut expedita.
+        Enim saepe deserunt, perferendis in aperiam error amet autem provident quis officia accusantium tempore tempora velit quasi quidem maxime odit quisquam, quod reprehenderit voluptatum architecto rem possimus voluptates tenetur? Deserunt?
+        </p>
+    </div>
+    <div class="col-stroke">
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Ritesh Birajdar</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Amit Khatke</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+        <div class="course-col-stroke-right">
+            <img src="fdbk_user2.jpg">
+            <div>
+                <h3>Chetan Birajdar</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <i class="fa fa-trophy"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="footer">
+    <h4>About Us</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aut dolorem ipsam voluptas nobis deleniti accusantium incidunt laudantium in pariatur perferendis magnam <br> quas, quisquam sapiente, reprehenderit, autem adipisci ex itaque?</p>
+    <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+    </div>
+    <p>Made with <i class="fa fa-heart-o"></i> by <span>TEAM OPTIONS</span></p>
+</section>
+</body>
+</html>
